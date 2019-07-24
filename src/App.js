@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  // const [inputData, setInputData] = useState("")
   
   const [formState, setFormState] = useState({
     name: '',
@@ -10,17 +9,14 @@ function App() {
     role: ''
   })
 
-  // const [teamMembersList, setTeamMembersList] = useState([])
-  let teamMembersList = []
-  
+  const [personArray, setPersonArray] = useState([])
 
   const submitHandler = (event) => {
     event.preventDefault()
-    // setTeamMembersList(formState)
-    teamMembersList.push(formState)
+    setPersonArray(personArray.concat(formState))
   }
 
-  console.log('TeamMembersList', teamMembersList)
+  console.log('personArray', personArray)
   return (
     <div className="App">
       <form onSubmit={submitHandler}>
