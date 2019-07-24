@@ -4,19 +4,23 @@ import './App.css';
 function App() {
   const [inputData, setInputData] = useState("")
   console.log(inputData)
+
+  const submitHandler = (event) => {
+    event.preventDefault()
+  }
+
   return (
     <div className="App">
-      <form>
+      <form onSubmit={submitHandler}>
         <label>
           Name
           <input 
             onChange={event => {
               setInputData(event.target.value)
-
             }}
           />
-
         </label>
+
         {/* <label>
           Email
           <input onChange={ () => {} }/>
