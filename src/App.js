@@ -8,16 +8,21 @@ function App() {
       <form>
         <label>
           Name
-          <input />
+          <input 
+            onChange={ (event) => {
+              console.log(event.target.value)
+            } }
+          />
+
         </label>
-        <label>
+        {/* <label>
           Email
-          <input />
+          <input onChange={ () => {} }/>
         </label>
         <label>
           Role
-          <input />
-        </label>
+          <input onChange={ () => {} }/>
+        </label> */}
           <input type="button" value="Submit"/>
       </form>
     </div>
