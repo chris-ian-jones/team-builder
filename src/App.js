@@ -10,11 +10,17 @@ function App() {
     role: ''
   })
 
+  // const [teamMembersList, setTeamMembersList] = useState([])
+  let teamMembersList = []
+  
+
   const submitHandler = (event) => {
     event.preventDefault()
-    console.log(formState)
+    // setTeamMembersList(formState)
+    teamMembersList.push(formState)
   }
 
+  console.log('TeamMembersList', teamMembersList)
   return (
     <div className="App">
       <form onSubmit={submitHandler}>
