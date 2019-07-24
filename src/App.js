@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [inputData, setInputData] = useState("")
-  console.log(inputData)
+  // const [inputData, setInputData] = useState("")
+  
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    role: ''
+  })
 
   const submitHandler = (event) => {
     event.preventDefault()
+    console.log(formState)
   }
 
   return (
@@ -16,20 +22,27 @@ function App() {
           Name
           <input 
             onChange={event => {
-              setInputData(event.target.value)
+              setFormState({ ...formState, name: event.target.value})
             }}
           />
         </label>
-
-        {/* <label>
+        <label>
           Email
-          <input onChange={ () => {} }/>
+          <input
+             onChange={event => {
+              setFormState({ ...formState, email: event.target.value})
+            }}
+          />
         </label>
         <label>
           Role
-          <input onChange={ () => {} }/>
-        </label> */}
-          <input type="button" value="Submit"/>
+          <input 
+            onChange={event => {
+              setFormState({ ...formState, role: event.target.value})
+            }}
+          />
+        </label>
+          <button>Submit</button>
       </form>
     </div>
   );
