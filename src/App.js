@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import TeamMemberList from './TeamMemberList'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
   const submitHandler = (event) => {
     event.preventDefault()
     setPersonArray(personArray.concat(formState))
+
   }
 
   console.log('personArray', personArray)
@@ -46,6 +48,10 @@ function App() {
         </label>
           <button>Submit</button>
       </form>
+      {personArray.map(person => (
+        <TeamMemberList key={person.email} person={person}/>
+      ))}
+      
     </div>
   );
 }
