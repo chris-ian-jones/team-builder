@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import './App.css';
-// import TeamMembersList from './TeamMembersList';
 
 function App() {
+  const [inputData, setInputData] = useState("")
+  console.log(inputData)
   return (
     <div className="App">
       <form>
         <label>
           Name
           <input 
-            onChange={ (event) => {
-              console.log(event.target.value)
-            } }
+            onChange={event => {
+              setInputData(event.target.value)
+
+            }}
           />
 
         </label>
